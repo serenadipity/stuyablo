@@ -20,6 +20,12 @@ public class Driver {
 	String type = scan.nextLine();
         type = type.toLowerCase();
 	/*
+	if (type == "warrior") {
+	    Warrior player = new Warrior();
+        }
+	else {
+	    Mage player = new Mage();
+        }
 	double d = Math.random();
 	System.out.println(d);
 	if (d >= .5) {
@@ -38,7 +44,7 @@ public class Driver {
 	twosec();
 	System.out.println("'What is your name hottie? ;)'");
 	String name = scan.nextLine();
-        
+        // player.setName(name);
 	
     }
 }
