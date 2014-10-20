@@ -57,6 +57,15 @@ public class Driver {
 	else {
 	    System.out.println("You Lie!!!!");
 	}
-	System.out.println("Now give me your kidneys!!! *Yes or No");
+	System.out.println("Now give me your kidneys!!! *Yes or No*");
+	String story = scan.nextLine();
+	story = story.toLowerCase();
+	story = story.replaceAll("\\s+","");
+	if (story.equals("yes")) {
+	    System.out.println("*insert kidney stealing + death here*");
+	}
+	else {
+	    System.out.println("*insert fight initiation here*");
+	}
     }
 }
