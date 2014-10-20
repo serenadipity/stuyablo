@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class Basechar{
+public abstract class Basechar{
     private int health,speed,defense,strength,magic; //base stats
     //should manna be only in mage, or basechar too?
     private Random r = new Random();
@@ -133,9 +133,10 @@ public class Basechar{
 	}
     }
 
+     public String block(Basechar 
 
     /*
-     I'm still thinking about how to do block. It should probably be a boolean. 
+     I'm still thinking about how to do block It should probably be a boolean. 
      But since what happens after you block is dependent on your opponent's attack,
      maybe it should be implemented in Driver? Or in the attack method itself? idk
       --Daisy 10/18/2014
