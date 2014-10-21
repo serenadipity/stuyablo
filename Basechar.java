@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class Basechar{
+public abstract class Basechar{
     private int health,speed,defense,strength,magic; //base stats
     //should manna be only in mage, or basechar too?
     private Random r = new Random();
@@ -17,7 +17,7 @@ public class Basechar{
     //still not exactly sure about constructors and inheritence
     //should work with 0 params though, tell me if u have probs
     public Basechar(){
-	health = 50;
+	health = 100;
 	//health will be the same for all, stats will decide the course of battle!
 	speed = randomValue(10,21);
 	defense = randomValue(10,21);
@@ -40,6 +40,13 @@ public class Basechar{
     public void setHealth(int health){
 	this.health = health;
     }
+    public int getDefense(){
+	return defense;
+    }
+    
+    public void setDefense(int defense){
+	this.defense = defense;
+    }
 
     public void setMagic(int value){
         magic = value;
@@ -47,6 +54,9 @@ public class Basechar{
     
     public void setStrength(int value){
         strength = value;
+    }
+    public int getStrength(){
+	return strength;
     }
     //too lazy to make get and set methods for all vars
     //I think it will be easier once he teaches us arrays
@@ -93,12 +103,13 @@ public class Basechar{
     
     //default physical attack for all!
     public String punch(Basechar opponent){
+	String s = name + " is attacking " + opponent + ".\n";
 	if (Success()){
 	    int newHealth = opponent.getHealth() - this.strength;
 	    //deals damage equivalent to strength stat
 	    opponent.setHealth(newHealth);
 
-	    String s = "Attack Successfull!\n";
+	    s = s + "Attack Successfull!\n";
 	    s = s + this.strength + "pts damage dealt, ";
 	    s = s + opponent + " now has " + opponent.getHealth() + "hp.\n";
 	    //prints damage meassage
@@ -133,9 +144,10 @@ public class Basechar{
 	}
     }
 
+    
 
     /*
-     I'm still thinking about how to do block. It should probably be a boolean. 
+     I'm still thinking about how to do block It should probably be a boolean. 
      But since what happens after you block is dependent on your opponent's attack,
      maybe it should be implemented in Driver? Or in the attack method itself? idk
       --Daisy 10/18/2014
