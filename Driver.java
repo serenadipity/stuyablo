@@ -20,6 +20,12 @@ public class Driver {
 	String type = scan.nextLine();
         type = type.toLowerCase();
 	/*
+	if (type == "warrior") {
+	    Warrior player = new Warrior();
+        }
+	else {
+	    Mage player = new Mage();
+        }
 	double d = Math.random();
 	System.out.println(d);
 	if (d >= .5) {
@@ -31,14 +37,35 @@ public class Driver {
 	*/
 	System.out.println("A mysterious figure approaches...");	
 	twosec();
+	System.out.println("It speaks...");
+	twosec();
 	System.out.println("'I command you...tell me asl ;)'");
 	String nametroll = scan.nextLine();
 	twosec();
 	System.out.println("'Excellent!'");
 	twosec();
-	System.out.println("'What is your name hottie? ;)'");
+	System.out.println("'What is your name hottie? ;)' *Type name below:*");
 	String name = scan.nextLine();
-        
-	
+        // player.setName(name);
+	System.out.println("Mucho gusto "  + name + ". My name is ??? but you can call me tonight ;)");
+	System.out.println("How many kidneys do you have?");
+	String kidnum = scan.nextLine();
+	System.out.println(kidnum);
+        if (kidnum.equals("2")) {
+	    System.out.println("Niceee");
+	}
+	else {
+	    System.out.println("You Lie!!!!");
+	}
+	System.out.println("Now give me your kidneys!!! *Yes or No*");
+	String story = scan.nextLine();
+	story = story.toLowerCase();
+	story = story.replaceAll("\\s+","");
+	if (story.equals("yes")) {
+	    System.out.println("*insert kidney stealing + death here*");
+	}
+	else {
+	    System.out.println("*insert fight initiation here*");
+	}
     }
 }
