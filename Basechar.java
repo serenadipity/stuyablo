@@ -40,6 +40,13 @@ public class Basechar{
     public void setHealth(int health){
 	this.health = health;
     }
+    public int getDefense(){
+	return defense;
+    }
+    
+    public void setDefense(int defense){
+	this.defense = defense;
+    }
 
     public void setMagic(int value){
         magic = value;
