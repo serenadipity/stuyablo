@@ -18,17 +18,17 @@ public class Mage extends Basechar{
 	    String s = this+" casted 'Feelings of Inadequacy' on "+opponent + ".\n";
 	    if (randomValue(1,100)< 20){
 	        s = s + "However " + opponent + "has blocked the attack.\n";
-		double newHealth = opponent.getHealth() - (this.magic*1.5 - opponent.getDefense());
+		double newHealth = opponent.getHealth() - Math.round(this.magic*1.5 - opponent.getDefense());
 		opponent.setHealth((int)newHealth);
-		s = s + (this.magic*1.5 - opponent.getDefense()) + "pts damage dealt, ";
-		s = s + opponent + "now has " + opponent.getHealth() + "hp.\n";
+		s = s + Math.round(this.magic*1.5 - opponent.getDefense()) + "pts damage dealt, ";
+		s = s + opponent + " now has " + opponent.getHealth() + "hp.\n";
 		this.setManna(this.getManna()-5);
 		return s;
 		
 	    } else {		    		        	    
-		double newHealth = opponent.getHealth() - this.magic*1.5;
+		double newHealth = opponent.getHealth() - Math.round(this.magic*1.5);
 		opponent.setHealth((int)newHealth);
-		s = s + this.magic*1.5 + "pts damage dealt, ";
+		s = s + Math.round(this.magic*1.5) + "pts damage dealt, ";
 		s = s + opponent + " now has " + opponent.getHealth() + "hp.\n";
 		this.setManna(this.getManna()-5);
 		return s;
@@ -37,7 +37,7 @@ public class Mage extends Basechar{
 	
 	    }
 	} else{
-	    return this+" failed to cast 'Feelings of Inadequacy' on " + opponent;
+	    return this+" failed to cast 'Feelings of Inadequacy' on " + opponent + ".\n";
 	}
     }
    public String CaffeineCrash(Basechar opponent){
@@ -45,24 +45,24 @@ public class Mage extends Basechar{
         String s = this+" casted 'CaffeineCrash' on "+opponent + ".\n";
         if (randomValue(1,100)< 20){
             s = s + "However " + opponent + "has blocked the attack.\n";
-    	    double newHealth = opponent.getHealth() - (this.magic*2.2 - opponent.getDefense());
+    	    double newHealth = opponent.getHealth() - Math.round(this.magic*2.2 - opponent.getDefense());
             opponent.setHealth((int)newHealth);
-	    s = s +"" + ( this.magic*2.2 - opponent.getDefense()) + "pts damage dealt, ";
+	    s = s +"" + Math.round(this.magic*2.2 - opponent.getDefense())/1 + "pts damage dealt, ";
 	    s = s + opponent + "now has " + opponent.getHealth() + "hp.\n";
 	    this.setManna(this.getManna()-10);
 	    return s;
 	    
         } else {		    		        	    
-	    double newHealth = opponent.getHealth() - this.magic*2.2;
+	    double newHealth = opponent.getHealth() - Math.round(this.magic*2.2);
 	    opponent.setHealth((int)newHealth);
-	    s = s + this.magic*2.2 + "pts damage dealt, ";
+	    s = s + Math.round(this.magic*2.2)/1 + "pts damage dealt, ";
 	    s = s + opponent + " now has " + opponent.getHealth() + "hp.\n";
 	    this.setManna(this.getManna()-10);	    
 	    return s;
 	    
 	}
    }else{
-        return this+" failed to cast 'Caffine Crash' on " + opponent;
+        return this+" failed to cast 'Caffine Crash' on " + opponent + ".\n";
 	}
     }
 }
