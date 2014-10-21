@@ -10,6 +10,7 @@ public class Driver {
 	}
 
     public static void main(String[] args) {
+	boolean gameover = false;
 	/*
 	Warrior w = new Warrior();
 	Mage m = new Mage();
@@ -19,22 +20,14 @@ public class Driver {
         Scanner scan = new Scanner(System.in);
 	String type = scan.nextLine();
         type = type.toLowerCase();
-	/*
-	if (type == "warrior") {
+	type = type.replaceAll("\\s+","");
+	if (type.equals("warrior")) {
 	    Warrior player = new Warrior();
         }
 	else {
 	    Mage player = new Mage();
         }
-	double d = Math.random();
-	System.out.println(d);
-	if (d >= .5) {
-	    Mage enemy = new Mage();
-	}
-	else {
-	    Warrior enemy = new Warrior();
-	}
-	*/
+        Mage enemy = new Mage();
 	System.out.println("A mysterious figure approaches...");	
 	twosec();
 	System.out.println("It speaks...");
@@ -46,7 +39,7 @@ public class Driver {
 	twosec();
 	System.out.println("'What is your name hottie? ;)' *Type name below:*");
 	String name = scan.nextLine();
-        // player.setName(name);
+        //player.setName(name);
 	System.out.println("Mucho gusto "  + name + ". My name is ??? but you can call me tonight ;)");
 	System.out.println("How many kidneys do you have?");
 	String kidnum = scan.nextLine();
@@ -63,9 +56,22 @@ public class Driver {
 	story = story.replaceAll("\\s+","");
 	if (story.equals("yes")) {
 	    System.out.println("*insert kidney stealing + death here*");
+	    gameover = true;
 	}
 	else {
 	    System.out.println("*insert fight initiation here*");
+	}
+
+	//fight sequence//
+
+	if (type.equals("warrior")) {
+	    player.swipe();
+	    enemy.FeelingsofInadequacy();
+	}
+
+	
+	if (gameover == true) {
+	    System.exit(0);
 	}
     }
 }
