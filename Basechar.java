@@ -55,6 +55,9 @@ public abstract class Basechar{
     public void setStrength(int value){
         strength = value;
     }
+    public int getStrength(){
+	return strength;
+    }
     //too lazy to make get and set methods for all vars
     //I think it will be easier once he teaches us arrays
     //hopefully this will be enough 4now though
