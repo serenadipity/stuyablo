@@ -1,0 +1,12 @@
+public class driver{
+    public static void main (String[] args){
+
+	Warrior w = new Warrior();
+	w.setName("Greg");
+	Warrior m = new Warrior();
+	w.setName("Costel");
+	System.out.println(w.swipe(m));
+	System.out.println(w.status());
+
+    }
+}
