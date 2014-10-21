@@ -17,7 +17,7 @@ public abstract class Basechar{
     //still not exactly sure about constructors and inheritence
     //should work with 0 params though, tell me if u have probs
     public Basechar(){
-	health = 50;
+	health = 100;
 	//health will be the same for all, stats will decide the course of battle!
 	speed = randomValue(10,21);
 	defense = randomValue(10,21);
