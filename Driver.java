@@ -3,18 +3,14 @@ import java.io.*;
 
 public class Driver {
 
-   public static void twosec() {
+   public static void pause(int n) {
        try {
-	   Thread.sleep(2000);
+	   Thread.sleep(n);
 	   } catch (Exception e) {}
 	}
 
     public static void main(String[] args) {
 	boolean gameover = false;
-	/*
-	Warrior w = new Warrior();
-	Mage m = new Mage();
-	*/
 	System.out.println("You wake up alone in the forest");
 	System.out.println("Are you a warrior or a mage?*Type warrior or mage*");
         Scanner scan = new Scanner(System.in);
@@ -22,21 +18,26 @@ public class Driver {
         type = type.toLowerCase();
 	type = type.replaceAll("\\s+","");
 	if (type.equals("warrior")) {
-	    Warrior player = new Warrior();
+      	    Warrior player = new Warrior();
         }
-	else {
+	if (type.equals("mage")) {
 	    Mage player = new Mage();
         }
+	else {
+	    System.out.println("*Please type mage or warrior*");
+	    type = scan.nextLine();
+	    type = type.replaceAll("\\s+","");
+	}
         Mage enemy = new Mage();
 	System.out.println("A mysterious figure approaches...");	
-	twosec();
+        pause(2000);
 	System.out.println("It speaks...");
-	twosec();
+	pause(2000);
 	System.out.println("'I command you...tell me asl ;)'");
 	String nametroll = scan.nextLine();
-	twosec();
+        pause(1000);
 	System.out.println("'Excellent!'");
-	twosec();
+	pause(1000);
 	System.out.println("'What is your name hottie? ;)' *Type name below:*");
 	String name = scan.nextLine();
         //player.setName(name);
@@ -44,7 +45,7 @@ public class Driver {
 	System.out.println("How many kidneys do you have?");
 	String kidnum = scan.nextLine();
 	System.out.println(kidnum);
-        if (kidnum.equals("2")) {
+        if (kidnum.equals("2") || kidnum.toLowerCase.equals("two")) {
 	    System.out.println("Niceee");
 	}
 	else {
@@ -55,21 +56,31 @@ public class Driver {
 	story = story.toLowerCase();
 	story = story.replaceAll("\\s+","");
 	if (story.equals("yes")) {
-	    System.out.println("*insert kidney stealing + death here*");
+	    System.out.println("The flirtatious stranger gently places his fingers upon your waist. He gropes slightly, and whispers 'You got some healthy beans there!! ;)");
+	    pause(4000);
+	    System.out.println("*shoves hand into sides and pulls out kidneys*");
+	    pause(2000);
+	    System.out.println("Game Over");
 	    gameover = true;
 	}
 	else {
-	    System.out.println("*insert fight initiation here*");
+	    System.out.println("'Fine. Then I'll just have to take them by force!'");
+	    pause(1000);
+	    System.out.println("*Initiate battle*");
 	}
 
 	//fight sequence//
-
+	/*
 	if (type.equals("warrior")) {
 	    player.swipe();
 	    enemy.FeelingsofInadequacy();
+	    manna += 2;
+	    if (manna > 25) {
+	        manna = 25;
+	    }
 	}
 
-	
+	*/
 	if (gameover == true) {
 	    System.exit(0);
 	}
