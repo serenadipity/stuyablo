@@ -100,12 +100,13 @@ public abstract class Basechar{
     
     //default physical attack for all!
     public String punch(Basechar opponent){
+	String s = name + " is attacking " + opponent;
 	if (Success()){
 	    int newHealth = opponent.getHealth() - this.strength;
 	    //deals damage equivalent to strength stat
 	    opponent.setHealth(newHealth);
 
-	    String s = "Attack Successfull!\n";
+	    s = s + "Attack Successfull!\n";
 	    s = s + this.strength + "pts damage dealt, ";
 	    s = s + opponent + " now has " + opponent.getHealth() + "hp.\n";
 	    //prints damage meassage
@@ -140,7 +141,7 @@ public abstract class Basechar{
 	}
     }
 
-     public String block(Basechar 
+    
 
     /*
      I'm still thinking about how to do block It should probably be a boolean. 
