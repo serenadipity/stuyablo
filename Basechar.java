@@ -103,7 +103,7 @@ public abstract class Basechar{
     
     //default physical attack for all!
     public String punch(Basechar opponent){
-	String s = name + " is attacking " + opponent;
+	String s = name + " is attacking " + opponent + ".\n";
 	if (Success()){
 	    int newHealth = opponent.getHealth() - this.strength;
 	    //deals damage equivalent to strength stat
