@@ -47,7 +47,7 @@ public class Driver {
 	System.out.println("'What is your name hottie? ;)' *Type name below:*");
 	String name = scan.nextLine();
         player.setName(name);
-	System.out.println("Mucho gusto "  + name + ". I am a mage. My name is ??? but you can call me tonight ;)");
+	System.out.println("Mucho gusto "  + name + ". I am a mage. My name is Peter Stuyvesant but you can call me tonight ;)");
 	System.out.println("How many kidneys do you have?");
 	String kidnum = scan.nextLine();
         if (kidnum.equals("2") || (kidnum.toLowerCase()).equals("two")) {

@@ -17,7 +17,7 @@ public class Mage extends Basechar{
 	if (Success() == true){
 	    String s = this+" casted 'Feelings of Inadequacy' on "+opponent + ".\n";
 	    if (randomValue(1,100)< 20){
-	        s = s + "However " + opponent + "has blocked the attack.\n";
+	        s = s + "However " + opponent + " has blocked the attack.\n";
 		double newHealth = opponent.getHealth() - Math.round(this.magic*1.5 - opponent.getDefense());
 		opponent.setHealth((int)newHealth);
 		s = s + Math.round(this.magic*1.5 - opponent.getDefense()) + "pts damage dealt, ";

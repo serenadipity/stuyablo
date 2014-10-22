@@ -5,7 +5,7 @@ public abstract class Basechar{
     private int health,speed,defense,strength,magic; //base stats
     //should manna be only in mage, or basechar too?
     private Random r = new Random();
-    private String name = "Anon of Default Town"; //default name
+    private String name = "Peter Stuyvesant"; //default name
 
     //returns a random integer between lower and upper [lower,upper)
     public int randomValue(int lower, int upper){
