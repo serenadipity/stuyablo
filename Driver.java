@@ -47,10 +47,9 @@ public class Driver {
 	System.out.println("'What is your name hottie? ;)' *Type name below:*");
 	String name = scan.nextLine();
         player.setName(name);
-	System.out.println("Mucho gusto "  + name + ". My name is ??? but you can call me tonight ;)");
+	System.out.println("Mucho gusto "  + name + ". I am a mage. My name is ??? but you can call me tonight ;)");
 	System.out.println("How many kidneys do you have?");
 	String kidnum = scan.nextLine();
-	System.out.println(kidnum);
         if (kidnum.equals("2") || (kidnum.toLowerCase()).equals("two")) {
 	    System.out.println("Niceee");
 	}
@@ -135,24 +134,21 @@ public class Driver {
 		    }
 		}
 	    }
-	    pause(2000);
+	    pause(4000);
 
 	    int hp = player.getHealth();
 	    int cpuhp = cpu.getHealth();
 	    if (hp <= 0) {
-		System.out.println("You Died.");
+		System.out.println("You Died. Game over.");
+		gameover = true;
+	    }
+	    else {
+		if (cpuhp <= 0) {
+		    System.out.println("Congratulations! You defeated the mage and get to keep your kidneys!!!");
+		    gameover = true;
+		}
 	    }
 		
-	/*
-	if (type.equals("warrior")) {
-	 
-	    cpu.FeelingsofInadequacy(player);
-	    cpu.setManna(cpu.getManna() + 2);
-	    if (cpu.getManna() > 25) {
-	        cpu.setManna(25);
-	    }
-	}
-	*/
 	}
 	if (gameover == true) {
 	    System.exit(0);
